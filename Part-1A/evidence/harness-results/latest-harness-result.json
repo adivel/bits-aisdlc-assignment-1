@@ -1,0 +1,29 @@
+{
+  "overall_status": "PASS",
+  "gates": [
+    {
+      "gate": "lint_ruff",
+      "command": "D:\\BITS\\AISDLC\\.venv\\Scripts\\python.exe -m ruff check src tests",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "gate": "sast_bandit",
+      "command": "D:\\BITS\\AISDLC\\.venv\\Scripts\\python.exe -m bandit -r src -ll -q",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "gate": "unit_tests_pytest",
+      "command": "D:\\BITS\\AISDLC\\.venv\\Scripts\\python.exe -m pytest tests -v",
+      "returncode": 0,
+      "status": "PASS",
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.15.2, pytest-9.2.0, pluggy-1.7.0 -- D:\\BITS\\AISDLC\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\BITS\\AISDLC\\Part-1A\ncollecting ... collected 7 items\n\ntests/test_ledger.py::test_ac1_create_project_persists PASSED            [ 14%]\ntests/test_ledger.py::test_ac2_reject_duplicate_and_non_positive_budget PASSED [ 28%]\ntests/test_ledger.py::test_ac3_decimal_precision_no_float_drift PASSED   [ 42%]\ntests/test_ledger.py::test_ac4_alert_status_transitions PASSED           [ 57%]\ntests/test_ledger.py::test_ac5_archived_project_rejects_expenses PASSED  [ 71%]\ntests/test_ledger.py::test_ac6_filter_expenses_by_category PASSED        [ 85%]\ntests/test_ledger.py::test_ac7_corrupted_ledger_raises_without_overwriting PASSED [100%]\n\n============================== 7 passed in 0.18s ==============================\n",
+      "stderr": ""
+    }
+  ]
+}
